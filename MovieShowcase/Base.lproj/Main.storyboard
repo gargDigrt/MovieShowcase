@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movies View Controller-->
         <scene sceneID="v60-GT-Ujl">
             <objects>
-                <viewController id="ean-Ed-hDv" sceneMemberID="viewController">
+                <viewController id="ean-Ed-hDv" customClass="MoviesViewController" customModule="MovieShowcase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIV-SX-d6r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieInfoViewCell" rowHeight="227" id="qof-vk-aGp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieInfoViewCell" rowHeight="227" id="qof-vk-aGp" customClass="MovieInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="227"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qof-vk-aGp" id="p5N-UI-ySs">
@@ -112,8 +112,19 @@
                                                 <constraint firstAttribute="trailing" secondItem="YxM-Qg-9YG" secondAttribute="trailing" constant="25" id="pz8-b0-6tO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="containerView" destination="YxM-Qg-9YG" id="7Dk-EN-o8w"/>
+                                            <outlet property="movieNameLabel" destination="kwv-6c-1hZ" id="u9F-dN-GfQ"/>
+                                            <outlet property="moviePosterImageView" destination="Wmu-AB-COA" id="A7t-Dw-LUr"/>
+                                            <outlet property="otherDetailsLabel" destination="bP0-zB-YXl" id="USi-Oj-xIn"/>
+                                            <outlet property="releaseDateLabel" destination="fq8-u2-MU7" id="UvI-XM-8KZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ean-Ed-hDv" id="mQb-nd-0cR"/>
+                                    <outlet property="delegate" destination="ean-Ed-hDv" id="n3w-C2-2cp"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2Te-Vj-awr">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
@@ -132,6 +143,9 @@
                             <constraint firstItem="RbT-C1-uYe" firstAttribute="top" secondItem="2Te-Vj-awr" secondAttribute="bottom" id="uc5-S8-JG0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieListTableView" destination="RbT-C1-uYe" id="hEN-fm-vPy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS0-Kb-ckF" sceneMemberID="firstResponder"/>
             </objects>
