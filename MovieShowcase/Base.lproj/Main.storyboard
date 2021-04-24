@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FyI-2c-L9A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ean-Ed-hDv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="374" y="74"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Details View Controller-->
         <scene sceneID="xfG-sX-KO3">
             <objects>
-                <viewController id="FyI-2c-L9A" sceneMemberID="viewController">
+                <viewController id="FyI-2c-L9A" customClass="MovieDetailsViewController" customModule="MovieShowcase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tck-xu-qZK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,25 +202,25 @@
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-85-QAQ">
                                                 <rect key="frame" x="0.0" y="1105" width="414" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="YXt-wk-tuN"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91Z-gZ-Fn0">
-                                                    <size key="itemSize" width="142" height="193"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91Z-gZ-Fn0">
+                                                    <size key="itemSize" width="150" height="200"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="byV-FN-InK">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditInfoViewCell" id="byV-FN-InK" customClass="CreditInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uWs-VC-yIx">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-3K-jLz">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-3K-jLz">
                                                                     <rect key="frame" x="25" y="20" width="100" height="100"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="100" id="Ly0-6J-88f"/>
@@ -259,9 +259,19 @@
                                                                 <constraint firstAttribute="trailing" secondItem="Zm7-yI-FjA" secondAttribute="trailing" constant="10" id="s2H-PV-VKe"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <color key="backgroundColor" red="0.3127318919" green="0.65194189550000003" blue="0.54419428110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="customSize" width="150" height="200"/>
+                                                        <connections>
+                                                            <outlet property="nameLabel" destination="RoB-gd-XjA" id="bzv-pX-7rt"/>
+                                                            <outlet property="profileImageView" destination="2Wk-3K-jLz" id="SwF-oc-vaU"/>
+                                                            <outlet property="roleLabel" destination="CSe-8D-0U5" id="1XE-Mu-2pZ"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="FyI-2c-L9A" id="oBo-kP-PUu"/>
+                                                    <outlet property="delegate" destination="FyI-2c-L9A" id="Dbh-YW-ACP"/>
+                                                </connections>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VY-rI-hBE" userLabel="SepratorView">
                                                 <rect key="frame" x="0.0" y="1320" width="414" height="1"/>
@@ -282,21 +292,21 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="gUi-yR-iJ5"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6W7-r0-aEZ">
-                                                    <size key="itemSize" width="142" height="193"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6W7-r0-aEZ">
+                                                    <size key="itemSize" width="150" height="200"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yr5-Pj-PhR">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditInfoViewCell" id="yr5-Pj-PhR" customClass="CreditInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WWn-a2-XNL">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dEx-i9-CZz">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dEx-i9-CZz">
                                                                     <rect key="frame" x="25" y="20" width="100" height="100"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="dEx-i9-CZz" secondAttribute="height" multiplier="1:1" id="aiP-Tt-mgT"/>
@@ -338,6 +348,10 @@
                                                         <size key="customSize" width="150" height="200"/>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="FyI-2c-L9A" id="wbu-u9-Qfh"/>
+                                                    <outlet property="delegate" destination="FyI-2c-L9A" id="yPn-iJ-d6q"/>
+                                                </connections>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoW-6O-Gz9" userLabel="SepratorView">
                                                 <rect key="frame" x="0.0" y="1596" width="414" height="1"/>
@@ -358,7 +372,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="vTx-Mj-2Br"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7XX-0Y-rc4">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7XX-0Y-rc4">
                                                     <size key="itemSize" width="203" height="111"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -366,7 +380,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iwP-Yi-Qyf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="120"/>
+                                                        <rect key="frame" x="0.0" y="15" width="200" height="120"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pc8-RG-ft1">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="120"/>
@@ -383,8 +397,8 @@
                                                     <constraint firstAttribute="height" constant="1" id="kPi-xl-bha"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abD-wx-IcV">
-                                                <rect key="frame" x="25" y="1833" width="156.5" height="26.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abD-wx-IcV">
+                                                <rect key="frame" x="25" y="1833" width="149" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -395,7 +409,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Se1-4h-pLz"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0xb-bq-F2h">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0xb-bq-F2h">
                                                     <size key="itemSize" width="150" height="202"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -486,14 +500,23 @@
                             <constraint firstItem="0Wm-Tk-hLK" firstAttribute="leading" secondItem="wVg-2a-b6n" secondAttribute="leading" id="fs6-VN-iNs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="castCollectionView" destination="AJA-85-QAQ" id="NMf-Bq-G0x"/>
+                        <outlet property="crewCollectionView" destination="dR3-Pa-UQT" id="0FR-9f-12M"/>
+                        <outlet property="moviePosterImageView" destination="9Gu-uF-qLL" id="daT-KM-tB6"/>
+                        <outlet property="overviewLabel" destination="hCO-4K-AtZ" id="kO9-BX-JRT"/>
+                        <outlet property="reviewsCollectionView" destination="1EN-Bx-vfZ" id="vNx-0w-bcp"/>
+                        <outlet property="similarMovieCollectionView" destination="A4w-jT-clx" id="4Ux-xn-Aua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8De-Rk-e5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="10.714285714285714"/>
+            <point key="canvasLocation" x="1223" y="74"/>
         </scene>
     </scenes>
     <resources>
         <image name="movie_placeholder" width="63.5" height="90"/>
+        <image name="user_placeholder" width="100" height="100"/>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
