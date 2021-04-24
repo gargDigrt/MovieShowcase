@@ -15,7 +15,7 @@ enum AppConfig {
 }
 
 enum Storyboard: String {
-    case main = "Main"
+    case main
     
-    func name() -> String {return self.rawValue}
+    func name() -> String {return rawValue.capitalized}
 }

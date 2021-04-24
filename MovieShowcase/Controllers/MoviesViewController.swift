@@ -28,8 +28,14 @@ class MoviesViewController: UIViewController {
         let urlText = MovieRequest.nowPlaying.getEndPoint()
         
         let resource = Resource<NowPlaying>(url: urlText)
+        
+        WaitingLoader.shared.show(onView: view)
         WebServices().load(resource: resource) { result in
-            
+            //Hide the waiting loader first
+            DispatchQueue.main.async {
+                WaitingLoader.shared.hide(fromView: self.view)
+            }
+            //Check for the result
             switch result {
             case .success(let nowPlaying):
                 self.movieListVm = MovieListViewModel(movies: nowPlaying.movies)
@@ -56,7 +62,7 @@ extension MoviesViewController:
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let movieInfoCell = tableView.dequeueReusableCell(withIdentifier: "MovieInfoViewCell", for: indexPath) as? MovieInfoViewCell else {
-            fatalError("Couldn't create the movie info cell")
+            fatalError("Couldn't create the movie info cell!!")
         }
         let movieVm = movieListVm?.movieAtIndex(indexPath.row)
         movieInfoCell.movieViewModel = movieVm
