@@ -19,6 +19,7 @@ class MovieInfoViewCell: UITableViewCell {
             movieNameLabel.text = movieViewModel.name
             releaseDateLabel.text = movieViewModel.releaseDate
             otherDetailsLabel.text = movieViewModel.overview
+            moviePosterImageView.setImage(endPoint: movieViewModel.posterPath)
         }
     }
 
