@@ -147,10 +147,20 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		22670A1F263473BC0004D2FC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				227E195E2634289D00F584AA /* AppDelegate.swift */,
+				227E19602634289D00F584AA /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		227E19522634289D00F584AA = {
 			isa = PBXGroup;
 			children = (
 				227E195D2634289D00F584AA /* MovieShowcase */,
+				224EBB732634406300943970 /* SecureConfig.xcconfig */,
 				227E1974263428A200F584AA /* MovieShowcaseTests */,
 				227E197F263428A200F584AA /* MovieShowcaseUITests */,
 				227E195C2634289D00F584AA /* Products */,
@@ -170,19 +180,17 @@
 		227E195D2634289D00F584AA /* MovieShowcase */ = {
 			isa = PBXGroup;
 			children = (
-				224EBB772634406300943970 /* Constants.swift */,
-				224EBB732634406300943970 /* SecureConfig.xcconfig */,
-				224EBB742634406300943970 /* Services */,
+				22670A1F263473BC0004D2FC /* Main */,
 				224EBB4B2634394600943970 /* Models */,
-				224EBB4F2634394600943970 /* ViewModels */,
 				224EBB462634394600943970 /* Views */,
+				224EBB4F2634394600943970 /* ViewModels */,
 				224EBB3F2634390C00943970 /* Controllers */,
-				227E195E2634289D00F584AA /* AppDelegate.swift */,
-				227E19602634289D00F584AA /* SceneDelegate.swift */,
+				224EBB742634406300943970 /* Services */,
 				227E19642634289D00F584AA /* Main.storyboard */,
 				227E1967263428A200F584AA /* Assets.xcassets */,
 				227E1969263428A200F584AA /* LaunchScreen.storyboard */,
 				227E196C263428A200F584AA /* Info.plist */,
+				224EBB772634406300943970 /* Constants.swift */,
 				224EBB912634493D00943970 /* UIImageViewExtension.swift */,
 			);
 			path = MovieShowcase;
