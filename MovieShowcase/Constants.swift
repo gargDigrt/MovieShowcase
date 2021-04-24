@@ -13,3 +13,9 @@ enum AppConfig {
     static let imageBasePath = "http://image.tmdb.org/t/p/w185"
     static let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String ?? ""
 }
+
+enum Storyboard: String {
+    case main = "Main"
+    
+    func name() -> String {return self.rawValue}
+}

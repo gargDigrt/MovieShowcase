@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieDetailsViewController: UIViewController {
+class MovieDetailsViewController: UIViewController, StoryBoardAble {
     
     //IBOutlet
     @IBOutlet var moviePosterImageView: UIImageView!
@@ -16,6 +16,10 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet var crewCollectionView: UICollectionView!
     @IBOutlet var reviewsCollectionView: UICollectionView!
     @IBOutlet var similarMovieCollectionView: UICollectionView!
+    
+    static var storyBoard: Storyboard {
+        return .main
+    }
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {

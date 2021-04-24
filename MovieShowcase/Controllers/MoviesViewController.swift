@@ -67,7 +67,11 @@ extension MoviesViewController:
         
         let movieInfoVM = movieListVm?.movieAtIndex(indexPath.row)
         
+        let movieDetailVC = MovieDetailsViewController.instantiateFromStoryboard()
         
+        DispatchQueue.main.async {
+            self.navigationController?.show(movieDetailVC, sender: nil)
+        }
         
     }
     
