@@ -222,7 +222,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-85-QAQ">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-85-QAQ">
                                                 <rect key="frame" x="0.0" y="476.5" width="414" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -304,7 +304,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-Pa-UQT">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-Pa-UQT">
                                                 <rect key="frame" x="0.0" y="742.5" width="414" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -385,27 +385,76 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1EN-Bx-vfZ">
-                                                <rect key="frame" x="0.0" y="1018.5" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1EN-Bx-vfZ">
+                                                <rect key="frame" x="0.0" y="1018.5" width="414" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="vTx-Mj-2Br"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7XX-0Y-rc4">
-                                                    <size key="itemSize" width="203" height="111"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7XX-0Y-rc4">
+                                                    <size key="itemSize" width="200" height="100"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iwP-Yi-Qyf">
-                                                        <rect key="frame" x="0.0" y="15" width="200" height="120"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewInfoViewCell" id="iwP-Yi-Qyf" customClass="ReviewInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pc8-RG-ft1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="120"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-Ib-mHv">
+                                                                    <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="25" id="NYD-7R-mFb"/>
+                                                                        <constraint firstAttribute="width" secondItem="dnO-Ib-mHv" secondAttribute="height" multiplier="1:1" id="VAy-PH-IsP"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <real key="value" value="12.5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Showcase user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWs-Ut-3zi">
+                                                                    <rect key="frame" x="40" y="14" width="140" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plr-mr-TlG">
+                                                                    <rect key="frame" x="10" y="45" width="180" height="35"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Plr-mr-TlG" firstAttribute="top" secondItem="dnO-Ib-mHv" secondAttribute="bottom" constant="10" id="8hs-wt-WaZ"/>
+                                                                <constraint firstItem="dnO-Ib-mHv" firstAttribute="top" secondItem="pc8-RG-ft1" secondAttribute="top" constant="10" id="CMy-c1-Bpe"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Plr-mr-TlG" secondAttribute="bottom" constant="20" id="OQ6-VK-eA2"/>
+                                                                <constraint firstItem="Plr-mr-TlG" firstAttribute="leading" secondItem="pc8-RG-ft1" secondAttribute="leading" constant="10" id="X2H-wf-cm7"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nWs-Ut-3zi" secondAttribute="trailing" constant="20" id="YBA-Wm-UcO"/>
+                                                                <constraint firstItem="dnO-Ib-mHv" firstAttribute="leading" secondItem="pc8-RG-ft1" secondAttribute="leading" constant="10" id="YqM-Az-Udu"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Plr-mr-TlG" secondAttribute="trailing" constant="10" id="cDw-to-ry6"/>
+                                                                <constraint firstItem="nWs-Ut-3zi" firstAttribute="leading" secondItem="dnO-Ib-mHv" secondAttribute="trailing" constant="5" id="m9f-yf-CaV"/>
+                                                                <constraint firstItem="nWs-Ut-3zi" firstAttribute="centerY" secondItem="dnO-Ib-mHv" secondAttribute="centerY" id="qeO-48-zUE"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </collectionViewCellContentView>
-                                                        <size key="customSize" width="200" height="120"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="customSize" width="200" height="100"/>
+                                                        <connections>
+                                                            <outlet property="authorImageView" destination="dnO-Ib-mHv" id="2to-n4-XFJ"/>
+                                                            <outlet property="authorNameLabel" destination="nWs-Ut-3zi" id="C2c-V4-Yjl"/>
+                                                            <outlet property="authorReviewLabel" destination="Plr-mr-TlG" id="E6b-kl-G7o"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>

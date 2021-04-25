@@ -35,6 +35,8 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     
     let crewDataSource = CrewDataSource()
     let castDataSource = CastDataSource()
+    let reviewDataSource = ReviewDataSource()
+    let collectionDelegate = ReviewsCollectionDelegate()
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {
@@ -44,6 +46,9 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
         
         getMovieDetails()
         getMovieCredits()
+        getMovieReviews()
+        
+        reviewsCollectionView.delegate = collectionDelegate
     }
     
     private func getMovieDetails() {
@@ -81,12 +86,35 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
             //Check for the result
             switch result {
             case .success(let credits):
-                print(credits)
                 self.crewDataSource.data = credits.crew
                 self.castDataSource.data = credits.cast
                 DispatchQueue.main.async {
                     self.crewCollectionView.dataSource = self.crewDataSource
                     self.castCollectionView.dataSource = self.castDataSource
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getMovieReviews() {
+        
+        let urlText = MovieRequest.reviews(movieID: movieId).getEndPoint()
+        let resource = Resource<Reviews>(urlText)
+        
+        WaitingLoader.shared.show(onView: view)
+        WebServices().load(resource: resource) { result in
+            //Hide the waiting loader first
+            DispatchQueue.main.async {
+                WaitingLoader.shared.hide(fromView: self.view)
+            }
+            //Check for the result
+            switch result {
+            case .success(let reviews):
+                self.reviewDataSource.data = reviews.authors ?? []
+                DispatchQueue.main.async {
+                    self.reviewsCollectionView.dataSource = self.reviewDataSource
                 }
             case .failure(let error):
                 print(error.localizedDescription)
