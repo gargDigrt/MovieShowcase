@@ -23,7 +23,7 @@ class CastInfoViewCell: UICollectionViewCell {
         didSet {
             nameLabel.text = castMemberVM.name
             roleLabel.text = castMemberVM.character
-            profileImageView.setImage(endPoint: castMemberVM.profilePath)
+//            profileImageView.setImage(endPoint: castMemberVM.profilePath, size: .w45)
         }
     }
      

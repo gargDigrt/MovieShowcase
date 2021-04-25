@@ -21,7 +21,15 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     
     var movieId: Int!
     
-    var synopsisVM: SynopsisViewModel!
+    var synopsisVM: SynopsisViewModel! {
+        didSet {
+            DispatchQueue.main.async {
+                self.moviePosterImageView.setImage(endPoint: self.synopsisVM.backdropPath, size: .w500)
+                self.overviewLabel.text = self.synopsisVM.overview
+                self.title = self.synopsisVM.title
+            }
+        }
+    }
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {

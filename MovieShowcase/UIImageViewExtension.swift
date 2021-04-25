@@ -10,8 +10,8 @@ import SDWebImage
 
 extension UIImageView {
     
-    func setImage(endPoint: String) {
-        let urlText = AppConfig.imageBasePath + endPoint
+    func setImage(endPoint: String, size: ImageSize) {
+        let urlText = AppConfig.imageBasePath + size.rawValue + endPoint
         guard let imgUrl = URL(string: urlText) else {
             fatalError("Image url is not correct!")
         }
