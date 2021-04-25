@@ -10,12 +10,20 @@ import UIKit
 class MovieDetailsViewController: UIViewController, StoryBoardAble {
     
     //IBOutlet
-    @IBOutlet var moviePosterImageView: UIImageView!
-    @IBOutlet var overviewLabel: UILabel!
-    @IBOutlet var castCollectionView: UICollectionView!
-    @IBOutlet var crewCollectionView: UICollectionView!
-    @IBOutlet var reviewsCollectionView: UICollectionView!
-    @IBOutlet var similarMovieCollectionView: UICollectionView!
+    @IBOutlet var moviePosterImageView: UIImageView!{
+        didSet {
+            moviePosterImageView.addShadow()
+        }
+    }
+    @IBOutlet var overviewLabel: UILabel!{
+        didSet{
+            overviewLabel.addShadow(.black)
+        }
+    }
+    @IBOutlet var castCollectionView: CustomCollection!
+    @IBOutlet var crewCollectionView: CustomCollection!
+    @IBOutlet var reviewsCollectionView: CustomCollection!
+    @IBOutlet var similarMovieCollectionView: CustomCollection!
     
     static var storyBoard: Storyboard {return .main}
     
@@ -37,8 +45,8 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     let castDataSource = CastDataSource()
     let reviewDataSource = ReviewDataSource()
     let movieDataSource = MovieDataSource()
-    let collectionDelegate = ReviewsCollectionDelegate()
-    let similarMovieDelegate = SimilarMovieDelegates()
+    
+    let collectionDelegate = CustomCollectionDelegates()
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {
@@ -52,7 +60,13 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
         getSimilarMovie()
         
         reviewsCollectionView.delegate = collectionDelegate
-        similarMovieCollectionView.delegate = similarMovieDelegate
+        reviewsCollectionView.type = .review
+        similarMovieCollectionView.delegate = collectionDelegate
+        similarMovieCollectionView.type = .movie
+        castCollectionView.delegate = collectionDelegate
+        castCollectionView.type = .cast
+        crewCollectionView.delegate = collectionDelegate
+        crewCollectionView.type = .crew
     }
     
     private func getMovieDetails() {

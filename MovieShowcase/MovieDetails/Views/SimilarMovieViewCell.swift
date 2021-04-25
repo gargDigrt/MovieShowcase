@@ -12,6 +12,11 @@ class SimilarMovieViewCell: UICollectionViewCell {
     @IBOutlet var moviePosterImageView: UIImageView!
     @IBOutlet var movieNameLabel: UILabel!
     
+    @IBOutlet var containerView: UIView! {
+        didSet {
+            containerView.addShadow()
+        }
+    }
     
     static var identifier: String {
         get{String(describing: self)}

@@ -33,5 +33,12 @@ enum ImageSize: String {
     case h632
 }
 
+enum CollectionType {
+    case cast
+    case crew
+    case review
+    case movie
+}
+
 let DEFAULT_PARAMS:[String: String] = ["api_key": AppConfig.apiKey,
                                                    "language": "en-US"]

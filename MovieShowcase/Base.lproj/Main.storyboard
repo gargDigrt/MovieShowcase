@@ -177,6 +177,9 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c7-O9-WjJ">
@@ -222,7 +225,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-85-QAQ">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-85-QAQ" customClass="CustomCollection" customModule="MovieShowcase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="476.5" width="414" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -265,7 +268,7 @@
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSe-8D-0U5">
                                                                             <rect key="frame" x="0.0" y="35.5" width="130" height="29.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -304,7 +307,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-Pa-UQT">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-Pa-UQT" customClass="CustomCollection" customModule="MovieShowcase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="742.5" width="414" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -347,7 +350,7 @@
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB5-nx-8xC">
                                                                             <rect key="frame" x="0.0" y="35.5" width="130" height="29.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -385,7 +388,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1EN-Bx-vfZ">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1EN-Bx-vfZ" customClass="CustomCollection" customModule="MovieShowcase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1018.5" width="414" height="150"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -454,6 +457,7 @@
                                                             <outlet property="authorImageView" destination="dnO-Ib-mHv" id="2to-n4-XFJ"/>
                                                             <outlet property="authorNameLabel" destination="nWs-Ut-3zi" id="C2c-V4-Yjl"/>
                                                             <outlet property="authorReviewLabel" destination="Plr-mr-TlG" id="E6b-kl-G7o"/>
+                                                            <outlet property="containerView" destination="pc8-RG-ft1" id="cwH-fo-mDB"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -471,7 +475,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A4w-jT-clx">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A4w-jT-clx" customClass="CustomCollection" customModule="MovieShowcase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1256" width="414" height="350"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -521,6 +525,7 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="150" height="300"/>
                                                         <connections>
+                                                            <outlet property="containerView" destination="h8j-az-sai" id="KK8-fE-Q5G"/>
                                                             <outlet property="movieNameLabel" destination="gGX-gU-NSh" id="v0o-ew-rLl"/>
                                                             <outlet property="moviePosterImageView" destination="52g-90-DEL" id="UAE-eh-Xwl"/>
                                                         </connections>
@@ -597,7 +602,7 @@
                     <connections>
                         <outlet property="castCollectionView" destination="AJA-85-QAQ" id="5ly-sg-7VM"/>
                         <outlet property="crewCollectionView" destination="dR3-Pa-UQT" id="0FR-9f-12M"/>
-                        <outlet property="moviePosterImageView" destination="9Gu-uF-qLL" id="daT-KM-tB6"/>
+                        <outlet property="moviePosterImageView" destination="9Gu-uF-qLL" id="b2p-J5-3VX"/>
                         <outlet property="overviewLabel" destination="hCO-4K-AtZ" id="kO9-BX-JRT"/>
                         <outlet property="reviewsCollectionView" destination="1EN-Bx-vfZ" id="vNx-0w-bcp"/>
                         <outlet property="similarMovieCollectionView" destination="A4w-jT-clx" id="4Ux-xn-Aua"/>

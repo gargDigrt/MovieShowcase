@@ -13,6 +13,12 @@ class ReviewInfoViewCell: UICollectionViewCell {
     @IBOutlet var authorNameLabel: UILabel!
     @IBOutlet var authorReviewLabel: UILabel!
     
+    @IBOutlet var containerView: UIView! {
+        didSet {
+            containerView.addShadow(.black)
+        }
+    }
+    
     static var identifier: String {
         get{String(describing: self)}
     }

@@ -25,12 +25,7 @@ class MovieInfoViewCell: UITableViewCell {
 
     @IBOutlet var containerView: UIView! {
         didSet {
-            // Make it card-like
-            containerView.layer.cornerRadius = 10
-            containerView.layer.shadowOpacity = 1
-            containerView.layer.shadowRadius = 4
-            containerView.layer.shadowColor = UIColor.darkGray.cgColor
-            containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
+            containerView.addShadow()
         }
     }
     override func awakeFromNib() {
