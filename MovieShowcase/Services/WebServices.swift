@@ -22,7 +22,7 @@ enum HttpMethod: String {
 struct Resource<T: Codable> {
     var urlRequest: URLRequest
 
-    init(_ url: String,_ params: [String: String] = [:],_ method: HttpMethod = .get) {
+    init(_ url: String,_ params: [String: String] = DEFAULT_PARAMS,_ method: HttpMethod = .get) {
         var urlComp = URLComponents(string: url)!
         var queries:[URLQueryItem] = []
         for key in params.keys{
