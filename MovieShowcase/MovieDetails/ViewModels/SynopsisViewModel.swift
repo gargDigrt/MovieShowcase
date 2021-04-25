@@ -33,6 +33,9 @@ extension SynopsisViewModel {
     var posterPath: String {
         return self.synopsis.posterPath
     }
+    var backdropPath: String {
+        return self.synopsis.backdropPath
+    }
     var releaseDate: String {
         return self.synopsis.releaseDate
     }

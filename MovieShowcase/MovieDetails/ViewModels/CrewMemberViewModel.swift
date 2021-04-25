@@ -28,6 +28,6 @@ extension CrewMemberViewModel {
     }
     
     var profilePath: String {
-        return self.crewMember.profilePath
+        return self.crewMember.profilePath ?? ""
     }
 }
