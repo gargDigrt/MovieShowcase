@@ -183,7 +183,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCO-4K-AtZ">
                                                 <rect key="frame" x="25" y="501.5" width="364" height="527.5"/>
                                                 <color key="backgroundColor" red="0.57657453989714935" green="0.38528389559880133" blue="0.49018012567737357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <mutableString key="text">bdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbds bdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbds</mutableString>
+                                                <string key="text">bdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbds bdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbdsbdkjkjdbjksbjkdbjksbjkdbjkbcjkbdjksbkjcsbdjkbcjskdbcjkbdskjcbkjdsbcjkbskjdbckjdsbckjbsdkjcbds</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditInfoViewCell" id="byV-FN-InK" customClass="CreditInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditInfoViewCell" id="byV-FN-InK" customClass="CastInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uWs-VC-yIx">
@@ -263,9 +263,9 @@
                                                         <color key="backgroundColor" red="0.3127318919" green="0.65194189550000003" blue="0.54419428110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="customSize" width="150" height="200"/>
                                                         <connections>
-                                                            <outlet property="nameLabel" destination="RoB-gd-XjA" id="bzv-pX-7rt"/>
-                                                            <outlet property="profileImageView" destination="2Wk-3K-jLz" id="SwF-oc-vaU"/>
-                                                            <outlet property="roleLabel" destination="CSe-8D-0U5" id="1XE-Mu-2pZ"/>
+                                                            <outlet property="nameLabel" destination="RoB-gd-XjA" id="rxq-sU-aVF"/>
+                                                            <outlet property="profileImageView" destination="2Wk-3K-jLz" id="7qC-36-8fk"/>
+                                                            <outlet property="roleLabel" destination="CSe-8D-0U5" id="vaK-Ya-0Vh"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -300,7 +300,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditInfoViewCell" id="yr5-Pj-PhR" customClass="CreditInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditInfoViewCell" id="yr5-Pj-PhR" customClass="CrewInfoViewCell" customModule="MovieShowcase" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WWn-a2-XNL">
@@ -347,6 +347,11 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="150" height="200"/>
+                                                        <connections>
+                                                            <outlet property="departmentLabel" destination="LB5-nx-8xC" id="a7B-BN-68G"/>
+                                                            <outlet property="nameLabel" destination="wtx-Pw-PVu" id="bcc-6H-IHL"/>
+                                                            <outlet property="profileImageView" destination="dEx-i9-CZz" id="FCF-N1-ag2"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>

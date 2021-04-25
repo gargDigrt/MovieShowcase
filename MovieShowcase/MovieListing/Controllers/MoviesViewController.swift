@@ -72,9 +72,9 @@ extension MoviesViewController:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let movieInfoVM = movieListVm?.movieAtIndex(indexPath.row)
-        
         let movieDetailVC = MovieDetailsViewController.instantiateFromStoryboard()
-        
+        guard let movieID = movieInfoVM?.Id else {return}
+        movieDetailVC.movieId = movieID
         DispatchQueue.main.async {
             self.navigationController?.show(movieDetailVC, sender: nil)
         }

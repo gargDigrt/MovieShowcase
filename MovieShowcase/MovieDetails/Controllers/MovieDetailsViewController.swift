@@ -18,14 +18,42 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     @IBOutlet var similarMovieCollectionView: UICollectionView!
     
     static var storyBoard: Storyboard {return .main}
+    
+    var movieId: Int!
+    
+    var synopsisVM: SynopsisViewModel!
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        getMovieDetails()
     }
     
+    private func getMovieDetails() {
+        
+        let urlText = MovieRequest.detail(movieID: movieId).getEndPoint()
+        
+        let resource = Resource<Synopsis>(url: urlText)
+        
+        WaitingLoader.shared.show(onView: view)
+        WebServices().load(resource: resource) { result in
+            //Hide the waiting loader first
+            DispatchQueue.main.async {
+                WaitingLoader.shared.hide(fromView: self.view)
+            }
+            //Check for the result
+            switch result {
+            case .success(let synopsis):
+                print(synopsis)
+                self.synopsisVM = SynopsisViewModel(synopsis: synopsis)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 }
 
@@ -34,8 +62,8 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
 extension MovieDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-//        return collectionView == castCollectionView ? 10 : 0
-        return 10
+        return collectionView == crewCollectionView ? 10 : 0
+//        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

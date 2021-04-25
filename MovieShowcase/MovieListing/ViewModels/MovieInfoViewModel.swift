@@ -17,6 +17,9 @@ struct MovieInfoViewModel {
 
 extension MovieInfoViewModel {
     
+    var Id: Int {
+        return self.movie.id
+    }
     var name: String {
         return self.movie.name
     }
