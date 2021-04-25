@@ -22,8 +22,8 @@ class CastInfoViewCell: UICollectionViewCell {
     var castMemberVM: CastMemberViewModel! {
         didSet {
             nameLabel.text = castMemberVM.name
-            roleLabel.text = castMemberVM.character
-//            profileImageView.setImage(endPoint: castMemberVM.profilePath, size: .w45)
+            roleLabel.text = "as \(castMemberVM.character)"
+            profileImageView.setImage(endPoint: castMemberVM.profilePath, size: .w92, placeholderImage: #imageLiteral(resourceName: "user_placeholder"))
         }
     }
      

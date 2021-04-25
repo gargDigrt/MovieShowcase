@@ -23,7 +23,7 @@ class CrewInfoViewCell: UICollectionViewCell {
         didSet {
             nameLabel.text = crewMemberVM.name
             departmentLabel.text = crewMemberVM.department
-            profileImageView.setImage(endPoint: crewMemberVM.profilePath, size: .w45)
+            profileImageView.setImage(endPoint: crewMemberVM.profilePath, size: .w92, placeholderImage: #imageLiteral(resourceName: "user_placeholder"))
         }
     }
      

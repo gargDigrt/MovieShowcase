@@ -8,9 +8,10 @@
 import Foundation
 
 struct CastMemberViewModel {
-    
+    //Private properties
     private let castMember: CastMember
     
+    //Initializer
     init(member: CastMember) {
         self.castMember = member
     }
@@ -18,6 +19,7 @@ struct CastMemberViewModel {
 
 extension CastMemberViewModel {
     
+    //properties
     var name: String {
         return self.castMember.name
     }
@@ -27,6 +29,6 @@ extension CastMemberViewModel {
     }
     
     var profilePath: String {
-        return self.castMember.profilePath
+        return self.castMember.profilePath ?? ""
     }
 }

@@ -23,7 +23,6 @@
 		22670A0D2634644B0004D2FC /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A0C2634644B0004D2FC /* MovieDetailsViewController.swift */; };
 		22670A2B263474DC0004D2FC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A2A263474DC0004D2FC /* Protocols.swift */; };
 		22670A30263476B50004D2FC /* WaitingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A2F263476B50004D2FC /* WaitingLoader.swift */; };
-		22670A5326349B9B0004D2FC /* CrewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A5226349B9B0004D2FC /* CrewDataSource.swift */; };
 		22670A5B26349C260004D2FC /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A5A26349C260004D2FC /* Credits.swift */; };
 		22670A662634ADFF0004D2FC /* CrewMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A652634ADFF0004D2FC /* CrewMemberViewModel.swift */; };
 		22670A6B2634AFCD0004D2FC /* CastInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22670A6A2634AFCD0004D2FC /* CastInfoViewCell.swift */; };
@@ -40,6 +39,8 @@
 		227E196B263428A200F584AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227E1969263428A200F584AA /* LaunchScreen.storyboard */; };
 		227E1976263428A200F584AA /* MovieShowcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227E1975263428A200F584AA /* MovieShowcaseTests.swift */; };
 		227E1981263428A300F584AA /* MovieShowcaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227E1980263428A200F584AA /* MovieShowcaseUITests.swift */; };
+		22A18E3D263575EA006FB80E /* CrewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18E3B263575EA006FB80E /* CrewDataSource.swift */; };
+		22A18E3E263575EA006FB80E /* CastDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18E3C263575EA006FB80E /* CastDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +76,6 @@
 		22670A0C2634644B0004D2FC /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		22670A2A263474DC0004D2FC /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		22670A2F263476B50004D2FC /* WaitingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingLoader.swift; sourceTree = "<group>"; };
-		22670A5226349B9B0004D2FC /* CrewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDataSource.swift; sourceTree = "<group>"; };
 		22670A5A26349C260004D2FC /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		22670A652634ADFF0004D2FC /* CrewMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberViewModel.swift; sourceTree = "<group>"; };
 		22670A6A2634AFCD0004D2FC /* CastInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastInfoViewCell.swift; sourceTree = "<group>"; };
@@ -98,6 +98,8 @@
 		227E197C263428A200F584AA /* MovieShowcaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieShowcaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		227E1980263428A200F584AA /* MovieShowcaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowcaseUITests.swift; sourceTree = "<group>"; };
 		227E1982263428A300F584AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22A18E3B263575EA006FB80E /* CrewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrewDataSource.swift; sourceTree = "<group>"; };
+		22A18E3C263575EA006FB80E /* CastDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,8 +191,8 @@
 		22670A5126349B760004D2FC /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				22A18E4526357632006FB80E /* DataSources */,
 				22670A802634B1B40004D2FC /* Controllers */,
-				22670A5226349B9B0004D2FC /* CrewDataSource.swift */,
 				22670A842634B1C00004D2FC /* Models */,
 				22670A742634B15D0004D2FC /* ViewModels */,
 				22670A782634B1790004D2FC /* Views */,
@@ -304,6 +306,15 @@
 				227E1982263428A300F584AA /* Info.plist */,
 			);
 			path = MovieShowcaseUITests;
+			sourceTree = "<group>";
+		};
+		22A18E4526357632006FB80E /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				22A18E3C263575EA006FB80E /* CastDataSource.swift */,
+				22A18E3B263575EA006FB80E /* CrewDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22670A2B263474DC0004D2FC /* Protocols.swift in Sources */,
+				22A18E3E263575EA006FB80E /* CastDataSource.swift in Sources */,
 				224EBB7A2634406300943970 /* MovieRequest.swift in Sources */,
 				224EBB7B2634406300943970 /* Constants.swift in Sources */,
 				22670A962634B23A0004D2FC /* CreditsViewModel.swift in Sources */,
@@ -454,7 +466,7 @@
 				224EBB532634394600943970 /* MovieInfoViewCell.swift in Sources */,
 				227E195F2634289D00F584AA /* AppDelegate.swift in Sources */,
 				22670A30263476B50004D2FC /* WaitingLoader.swift in Sources */,
-				22670A5326349B9B0004D2FC /* CrewDataSource.swift in Sources */,
+				22A18E3D263575EA006FB80E /* CrewDataSource.swift in Sources */,
 				22670A892634B1DA0004D2FC /* CrewMember.swift in Sources */,
 				224EBB572634394600943970 /* NowPlaying.swift in Sources */,
 				224EBB5A2634394600943970 /* MovieListViewModel.swift in Sources */,

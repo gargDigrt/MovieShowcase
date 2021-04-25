@@ -10,15 +10,19 @@ import Foundation
 
 struct CrewMemberViewModel {
     
+    //Private properties
     private let crewMember: CrewMember
     
+    //Initializer
     init(member: CrewMember) {
         self.crewMember = member
     }
+    
 }
 
 extension CrewMemberViewModel {
     
+    //Properties
     var name: String {
         return self.crewMember.name
     }

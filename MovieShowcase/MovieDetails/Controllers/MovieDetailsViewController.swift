@@ -30,6 +30,11 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
             }
         }
     }
+    
+//Datasources
+    
+    let crewDataSource = CrewDataSource()
+    let castDataSource = CastDataSource()
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {
@@ -38,12 +43,12 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
         // Do any additional setup after loading the view.
         
         getMovieDetails()
+        getMovieCredits()
     }
     
     private func getMovieDetails() {
         
         let urlText = MovieRequest.detail(movieID: movieId).getEndPoint()
-        
         let resource = Resource<Synopsis>(urlText)
         
         WaitingLoader.shared.show(onView: view)
@@ -55,35 +60,38 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
             //Check for the result
             switch result {
             case .success(let synopsis):
-                print(synopsis)
                 self.synopsisVM = SynopsisViewModel(synopsis: synopsis)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-
-}
-
-
-//MARK:- UICollectionViewDataSource
-extension MovieDetailsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    private func getMovieCredits() {
         
-        return collectionView == crewCollectionView ? 10 : 0
-//        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let urlText = MovieRequest.credits(movieID: movieId).getEndPoint()
+        let resource = Resource<Credits>(urlText)
         
-        return collectionView.dequeueReusableCell(withReuseIdentifier:  "CreditInfoViewCell", for: indexPath) as! CrewInfoViewCell
+        WaitingLoader.shared.show(onView: view)
+        WebServices().load(resource: resource) { result in
+            //Hide the waiting loader first
+            DispatchQueue.main.async {
+                WaitingLoader.shared.hide(fromView: self.view)
+            }
+            //Check for the result
+            switch result {
+            case .success(let credits):
+                print(credits)
+                self.crewDataSource.data = credits.crew
+                self.castDataSource.data = credits.cast
+                DispatchQueue.main.async {
+                    self.crewCollectionView.dataSource = self.crewDataSource
+                    self.castCollectionView.dataSource = self.castDataSource
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-    
 }
 
-extension MovieDetailsViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 200)
-    }
-}
