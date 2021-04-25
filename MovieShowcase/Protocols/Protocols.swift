@@ -10,18 +10,24 @@ import UIKit
 
 
 
+/// This protocol will allow ViewController to get instantiated easily
 protocol StoryBoardAble: class {
+    //Properties
     static var storyBoard: Storyboard {get}
     static var identifier: String {get}
     
 }
 
+//MARK:- Functions
 extension StoryBoardAble where Self: UIViewController {
     
     static var identifier: String {
         return String(describing: self)
     }
     
+    
+    /// To instantiate a particular UIViewController
+    /// - Returns: UIViewController Instance
     static func instantiateFromStoryboard() -> Self {
         let storyboard = UIStoryboard(name: storyBoard.name(), bundle: nil)
         

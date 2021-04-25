@@ -7,14 +7,19 @@
 
 import Foundation
 
+/// Enum to generate Movie Request
 enum MovieRequest {
     
+    //Reuest Subtype
     case nowPlaying
     case detail(movieID: Int)
     case reviews(movieID: Int)
     case credits(movieID: Int)
     case similar(movieID: Int)
     
+    
+    /// Method to generate end point on the basis of subtype
+    /// - Returns: This will return final endpoint for URL
     func getEndPoint() -> String {
         var nextString = ""
         switch self {
@@ -33,5 +38,4 @@ enum MovieRequest {
         let finalUrlString = AppConfig.apiBaseURL + nextString
         return finalUrlString
     }
-    
 }
