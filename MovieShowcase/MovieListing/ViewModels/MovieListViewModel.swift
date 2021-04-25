@@ -18,7 +18,7 @@ struct MovieListViewModel {
     }
 }
 
-//MARK:- Table view list porperties
+//MARK:- Table view list properties
 
 extension MovieListViewModel {
     var numberOfMovies: Int {

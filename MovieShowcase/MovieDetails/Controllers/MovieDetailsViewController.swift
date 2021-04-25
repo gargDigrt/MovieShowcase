@@ -17,9 +17,7 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     @IBOutlet var reviewsCollectionView: UICollectionView!
     @IBOutlet var similarMovieCollectionView: UICollectionView!
     
-    static var storyBoard: Storyboard {
-        return .main
-    }
+    static var storyBoard: Storyboard {return .main}
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {
@@ -31,6 +29,7 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
 
 }
 
+
 //MARK:- UICollectionViewDataSource
 extension MovieDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +40,7 @@ extension MovieDetailsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return collectionView.dequeueReusableCell(withReuseIdentifier:  "CreditInfoViewCell", for: indexPath) as! CreditInfoViewCell
+        return collectionView.dequeueReusableCell(withReuseIdentifier:  "CreditInfoViewCell", for: indexPath) as! CrewInfoViewCell
     }
     
 }
