@@ -20,6 +20,7 @@ struct Synopsis: Codable {
     let tagline: String
     let overview: String
     let posterPath: String
+    let backdropPath: String
     let releaseDate: String
     let runtime: Int
     let genres: [Genre]
@@ -30,6 +31,7 @@ struct Synopsis: Codable {
         case overview, runtime, genres
         case posterPath = "poster_path"
         case releaseDate = "release_date"
+        case backdropPath = "backdrop_path"
     }
     
     
