@@ -14,7 +14,12 @@ class MoviesViewController: UIViewController {
     
     //Variables
     private var movieListVm: MovieListViewModel?
-
+    var pageIndex: String {
+        get{
+            return movieListVm?.pageIndex ?? "1"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +32,11 @@ class MoviesViewController: UIViewController {
 
         let urlText = MovieRequest.nowPlaying.getEndPoint()
         
-        let resource = Resource<NowPlaying>(url: urlText)
+        let param:[String: String] = ["api_key": AppConfig.apiKey,
+                                      "language": "en-US",
+                                      "page": pageIndex]
+        let resource = Resource<NowPlaying>(urlText,param)
+        
         
         WaitingLoader.shared.show(onView: view)
         WebServices().load(resource: resource) { result in
@@ -38,7 +47,7 @@ class MoviesViewController: UIViewController {
             //Check for the result
             switch result {
             case .success(let nowPlaying):
-                self.movieListVm = MovieListViewModel(movies: nowPlaying.movies)
+                self.movieListVm = MovieListViewModel(nowPlaying: nowPlaying)
                 DispatchQueue.main.async {
                     self.movieListTableView.reloadData()
                 }

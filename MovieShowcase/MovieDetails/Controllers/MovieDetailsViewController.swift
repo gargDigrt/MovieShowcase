@@ -36,7 +36,7 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
         
         let urlText = MovieRequest.detail(movieID: movieId).getEndPoint()
         
-        let resource = Resource<Synopsis>(url: urlText)
+        let resource = Resource<Synopsis>(urlText)
         
         WaitingLoader.shared.show(onView: view)
         WebServices().load(resource: resource) { result in

@@ -10,17 +10,26 @@ import Foundation
 struct MovieListViewModel {
     
     //Properties
-    private let movies: [Movie]
+    private let nowPlaying: NowPlaying
+    private var movies: [Movie] {
+        get {
+            return nowPlaying.movies
+        }
+    }
     
     //Initializer
-    init(movies: [Movie]) {
-        self.movies = movies
+    init(nowPlaying: NowPlaying) {
+        self.nowPlaying = nowPlaying
     }
 }
 
 //MARK:- Table view list properties
 
 extension MovieListViewModel {
+    var pageIndex: String {
+        return String(self.nowPlaying.page)
+    }
+    
     var numberOfMovies: Int {
         return self.movies.count
     }

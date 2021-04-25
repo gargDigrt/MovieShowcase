@@ -14,17 +14,24 @@ enum NetworkingError: Error {
     
 }
 
-struct Resource<T: Codable> {
-    let urlRequest: URLRequest
+enum HttpMethod: String {
+    case get
+    case post
+}
 
-    init(url: String) {
+struct Resource<T: Codable> {
+    var urlRequest: URLRequest
+
+    init(_ url: String,_ params: [String: String] = [:],_ method: HttpMethod = .get) {
         var urlComp = URLComponents(string: url)!
-        urlComp.queryItems = [
-            URLQueryItem(name: "api_key", value: AppConfig.apiKey),
-            URLQueryItem(name: "language", value: "en-US"),
-            URLQueryItem(name: "page", value: "1")
-        ]
+        var queries:[URLQueryItem] = []
+        for key in params.keys{
+           let newQuery = URLQueryItem(name: key, value: params[key])
+            queries.append(newQuery)
+        }
+        urlComp.queryItems = queries
         urlRequest = URLRequest(url: urlComp.url!)
+        urlRequest.httpMethod = method.rawValue
     }
 }
 
