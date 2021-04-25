@@ -49,6 +49,27 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     let collectionDelegate = CustomCollectionDelegates()
     
     //MARK:- View's Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //Added back bar button 
+        let backButton = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(backTapped))
+        backButton.tintColor = .red
+        navigationItem.leftBarButtonItem = backButton
+
+        
+        /// Get all the data to display
+        getMovieDetails()
+        getMovieCredits()
+        getMovieReviews()
+        getSimilarMovie()
+        
+        /// Setup delegates for all four collectionviews
+        setupCommonDelegates()
+    }
+    
+    //MARK:- Custom methode
     fileprivate func setupCommonDelegates() {
         reviewsCollectionView.delegate = collectionDelegate
         reviewsCollectionView.type = .review
@@ -60,17 +81,10 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
         crewCollectionView.type = .crew
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        /// Get all the data to display
-        getMovieDetails()
-        getMovieCredits()
-        getMovieReviews()
-        getSimilarMovie()
-        
-        /// Setup delegates for all four collectionviews
-        setupCommonDelegates()
+    @objc func backTapped() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     private func getMovieDetails() {
