@@ -15,29 +15,28 @@ class MoviesViewController: UIViewController{
     //Variables
     private var movieListVm: MovieListViewModel?
     var searchController: UISearchController!
+    let movieListDatasource = MovieListDataSource()
+    lazy var moviListDelegate = MovieListDelegates(withDelegate: self)
     var pageIndex: String {
         get{
             return movieListVm?.pageIndex ?? "1"
         }
     }
-    let movieListDatasource = MovieListDataSource()
-    lazy var moviListDelegate = MovieListDelegates(withDelegate: self)
     
+    //MARK:- View's Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Movie Showcase"
         
-        //        searchController = UISearchController(searchResultsController: nil)
-        //        navigationItem.hidesSearchBarWhenScrolling = true
-        //        navigationItem.searchController = searchController
-        //        searchController.obscuresBackgroundDuringPresentation = false
-        //        searchController.searchBar.placeholder = "Search a movie"
-        //        searchController.searchBar.delegate = self
+        searchController = UISearchController(searchResultsController: nil)
+        navigationItem.hidesSearchBarWhenScrolling = true
+        navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search your movie"
         
         movieListTableView.delegate = moviListDelegate
         
-        // Do any additional setup after loading the view.
         getMoviesList()
     }
     
@@ -70,31 +69,7 @@ class MoviesViewController: UIViewController{
             }
         }
     }
-    
-    
-    func searchFor(_ searchText: String?) {
-        guard searchController.isActive else { return }
-        guard let searchText = searchText else {
-            //        resultsTableViewController.countries = nil
-            return
-        }
-        //      let selectedYear = selectedScopeYear()
-        //      let allCountries = countries.values.joined()
-        //      let filteredCountries = allCountries.filter { (country: Country) -> Bool in
-        //        let isMatchingYear = selectedYear == Year.all.description ? true : (country.year.description == selectedYear)
-        //        if searchText != "" {
-        //          return
-        //            isMatchingYear &&
-        //            country.name.lowercased().contains(searchText.lowercased())
-        //        }
-        //        return false
-        //      }
-        //      resultsTableViewController.countries = filteredCountries
-        
-        
-    }
 }
-
 
 extension MoviesViewController: MovieSelectionDelegate {
     
@@ -106,15 +81,5 @@ extension MoviesViewController: MovieSelectionDelegate {
         DispatchQueue.main.async {
             self.navigationController?.show(movieDetailVC, sender: nil)
         }
-    }
-}
-
-extension MoviesViewController: UISearchBarDelegate  {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchFor(searchText)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
     }
 }

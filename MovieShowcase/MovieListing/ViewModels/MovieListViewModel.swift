@@ -11,7 +11,7 @@ struct MovieListViewModel {
     
     //Properties
     private let nowPlaying: NowPlaying
-    private var movies: [Movie] {
+    var movies: [Movie] {
         get {
             return nowPlaying.movies
         }

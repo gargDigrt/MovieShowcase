@@ -312,8 +312,8 @@
 		227E195D2634289D00F584AA /* MovieShowcase */ = {
 			isa = PBXGroup;
 			children = (
-				22670A29263474DC0004D2FC /* Protocols */,
 				22670A1F263473BC0004D2FC /* Main */,
+				22670A29263474DC0004D2FC /* Protocols */,
 				22670A792634B19E0004D2FC /* MovieListing */,
 				22670A5126349B760004D2FC /* MovieDetails */,
 				224EBB742634406300943970 /* Services */,

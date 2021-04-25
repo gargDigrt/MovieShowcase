@@ -11,7 +11,6 @@ import UIKit
 
 
 protocol StoryBoardAble: class {
-    
     static var storyBoard: Storyboard {get}
     static var identifier: String {get}
     
