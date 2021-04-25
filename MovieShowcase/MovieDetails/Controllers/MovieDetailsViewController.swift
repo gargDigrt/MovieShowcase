@@ -36,7 +36,9 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     let crewDataSource = CrewDataSource()
     let castDataSource = CastDataSource()
     let reviewDataSource = ReviewDataSource()
+    let movieDataSource = MovieDataSource()
     let collectionDelegate = ReviewsCollectionDelegate()
+    let similarMovieDelegate = SimilarMovieDelegates()
 
     //MARK:- View's Life cycle
     override func viewDidLoad() {
@@ -47,8 +49,10 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
         getMovieDetails()
         getMovieCredits()
         getMovieReviews()
+        getSimilarMovie()
         
         reviewsCollectionView.delegate = collectionDelegate
+        similarMovieCollectionView.delegate = similarMovieDelegate
     }
     
     private func getMovieDetails() {
@@ -115,6 +119,30 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
                 self.reviewDataSource.data = reviews.authors ?? []
                 DispatchQueue.main.async {
                     self.reviewsCollectionView.dataSource = self.reviewDataSource
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getSimilarMovie() {
+        
+        let urlText = MovieRequest.similar(movieID: movieId).getEndPoint()
+        let resource = Resource<SimilarMovies>(urlText)
+        
+        WaitingLoader.shared.show(onView: view)
+        WebServices().load(resource: resource) { result in
+            //Hide the waiting loader first
+            DispatchQueue.main.async {
+                WaitingLoader.shared.hide(fromView: self.view)
+            }
+            //Check for the result
+            switch result {
+            case .success(let similarMovies):
+                self.movieDataSource.data = similarMovies.movies ?? []
+                DispatchQueue.main.async {
+                    self.similarMovieCollectionView.dataSource = self.movieDataSource
                 }
             case .failure(let error):
                 print(error.localizedDescription)
