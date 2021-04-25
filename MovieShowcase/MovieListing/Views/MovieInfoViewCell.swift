@@ -14,6 +14,7 @@ class MovieInfoViewCell: UITableViewCell {
     @IBOutlet var otherDetailsLabel: UILabel!
     @IBOutlet var moviePosterImageView: UIImageView!
     
+    static var identifier: String {return String(describing: self)}
     var movieViewModel: MovieInfoViewModel! {
         didSet {
             movieNameLabel.text = movieViewModel.name

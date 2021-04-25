@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MovieDataSource: GenericDataSource<Movie>, UICollectionViewDataSource {
+class SimilarMovieDataSource: GenericDataSource<Movie>, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }

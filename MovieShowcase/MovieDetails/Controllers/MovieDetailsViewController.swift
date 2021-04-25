@@ -44,7 +44,7 @@ class MovieDetailsViewController: UIViewController, StoryBoardAble {
     let crewDataSource = CrewDataSource()
     let castDataSource = CastDataSource()
     let reviewDataSource = ReviewDataSource()
-    let movieDataSource = MovieDataSource()
+    let movieDataSource = SimilarMovieDataSource()
     
     let collectionDelegate = CustomCollectionDelegates()
 
