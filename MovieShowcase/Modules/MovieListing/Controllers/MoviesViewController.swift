@@ -36,6 +36,7 @@ class MoviesViewController: UIViewController{
         searchController.searchBar.placeholder = "Search your movie"
         
         movieListTableView.delegate = movieListDelegate
+        movieListTableView.accessibilityIdentifier = "table--movieListTableView"
         
         getMoviesList()
     }
